@@ -1,6 +1,29 @@
+@font-face {
+  font-family: "D-DIN";
+  src: url("../public/assets/fonts/D-DIN.otf");
+}
+@font-face {
+  font-family: "D-DIN";
+  font-weight: bold;
+  src: url("../public/assets/fonts/D-DIN-Bold.otf");
+}
+@font-face {
+  font-family: "D-DIN";
+  font-style: italic;
+  src: url("../public/assets/fonts/D-DIN-Italic.otf");
+}
+@font-face {
+  font-family: "HSR";
+  src: url("../public/assets/fonts/HSR.ttf");
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --padding-lf: 40px;
+  --padding-tb: 15px;
+  --button-bg: rgba(255, 255, 255, 0.8);
+  --button-border: rgba(179, 179, 179, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,12 +37,16 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../public/assets/image/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "D-DIN";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,4 +66,61 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.main,
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.character-nav {
+  display: flex;
+  height: 60px;
+}
+
+.character-main {
+  display: flex;
+  flex-grow: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-tb) var(--padding-lf);
+}
+
+.navbar-group {
+  display: flex;
+  gap: 5px;
+}
+
+button {
+  display: flex;
+  background: var(--button-bg);
+  border: none;
+  font-family: "HSR";
+  font-size: 18px;
+  border-radius: 25px;
+  padding: 10px 30px;
+
+  outline: 1px solid var(--button-border); /* The inner "border" line */
+  outline-offset: -5px;
+}
+button:hover {
+  background: white;
+}
+button:active {
+  box-shadow: inset 0 0 0 2px white !important;
+  background: var(--button-bg);
+}
+button.circle {
+  padding: 12px;
 }
