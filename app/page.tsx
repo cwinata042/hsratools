@@ -1,3 +1,4 @@
+import Characters from "@/components/Characters";
 import { IoMdSettings } from "react-icons/io";
 import { IoDownloadOutline } from "react-icons/io5";
 import { VscDebugDisconnect } from "react-icons/vsc";
@@ -6,10 +7,7 @@ export default function Home() {
   return (
     <div className="main">
       <div className="body">
-        <div className="characters">
-          <div className="character-nav">Character Navigation</div>
-          <div className="character-main">Main Character Screen</div>
-        </div>
+        <Characters />
       </div>
       <div className="navbar">
         <div className="navbar-group">

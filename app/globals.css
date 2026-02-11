@@ -83,7 +83,32 @@ a {
 
 .character-nav {
   display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+  gap: 20px;
+  margin: var(--padding-tb) var(--padding-lf);
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Older Safari and Chromium */
+}
+
+.char-icon {
+  display: flex;
+  position: relative;
+  min-width: 60px;
   height: 60px;
+}
+
+.undraggable {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .character-main {

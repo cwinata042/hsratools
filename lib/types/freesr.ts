@@ -1,9 +1,5 @@
-import chars from "../../data/game_data.json";
-
-export type TCharacterId = keyof typeof chars.characters;
-
-export type TCharacter = {
-  id: TCharacterId;
+export type TCharacterDetails = {
+  id: string;
   name: string;
   rarity: number;
   path: string;
@@ -16,14 +12,14 @@ export type TCharacter = {
     ATK: number;
     DEF: number;
     SPD: number;
-    CRIT_Rate: number;
-    CRIT_DMG: number;
+    "CRIT Rate": number;
+    "CRIT DMG": number;
   };
   unreleased: boolean;
 };
 
 export type TFreeSRChar = {
-  avatar_id: TCharacterId; // Character ID
+  avatar_id: string; // Character ID
   data: {
     rank: number; // Eidolon level
     skills: object; // Collection of Skill IDs and current level
