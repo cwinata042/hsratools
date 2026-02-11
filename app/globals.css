@@ -99,11 +99,13 @@ a {
 
 .navbar-group {
   display: flex;
-  gap: 5px;
+  gap: 8px;
 }
 
 button {
   display: flex;
+  gap: 8px;
+  align-items: center;
   background: var(--button-bg);
   border: none;
   font-family: "HSR";
@@ -113,9 +115,11 @@ button {
 
   outline: 1px solid var(--button-border); /* The inner "border" line */
   outline-offset: -5px;
+  transition: 0.2s;
 }
 button:hover {
   background: white;
+  transition: 0.2s;
 }
 button:active {
   box-shadow: inset 0 0 0 2px white !important;
@@ -123,4 +127,9 @@ button:active {
 }
 button.circle {
   padding: 12px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }

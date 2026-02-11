@@ -1,4 +1,6 @@
 import { IoMdSettings } from "react-icons/io";
+import { IoDownloadOutline } from "react-icons/io5";
+import { VscDebugDisconnect } from "react-icons/vsc";
 
 export default function Home() {
   return (
@@ -12,10 +14,16 @@ export default function Home() {
       <div className="navbar">
         <div className="navbar-group">
           <button className="circle">
-            <IoMdSettings />
+            <IoMdSettings className="icon" />
           </button>
-          <button>Download freesr-data.json</button>
-          <button>Connect to PS</button>
+          <button>
+            <IoDownloadOutline className="icon" /> freesr-data.json
+          </button>
+          <button>
+            {" "}
+            <VscDebugDisconnect className="icon" />
+            Connect to PS
+          </button>
         </div>
         <div className="navbar-group">
           <button>Characters</button>
