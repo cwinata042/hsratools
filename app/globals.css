@@ -21,9 +21,10 @@
   --background: #ffffff;
   --foreground: #171717;
   --padding-lf: 40px;
-  --padding-tb: 15px;
+  --padding-tb: 20px;
   --button-bg: rgba(255, 255, 255, 0.8);
   --button-border: rgba(179, 179, 179, 0.8);
+  --gold: #ffdb91;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +48,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   font-family: "D-DIN";
+  letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,6 +75,14 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+  color: white;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+.gold {
+  color: var(--gold);
 }
 
 .characters {
@@ -81,16 +91,58 @@ a {
   flex-grow: 1;
 }
 
+.character-header {
+  display: flex;
+  align-items: center;
+  padding: var(--padding-tb) var(--padding-lf);
+  gap: 20px;
+}
+
+.character-header-section {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  gap: 20px;
+}
+
+.character-info-header {
+  display: flex;
+  flex-direction: column;
+}
+.character-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.character-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+p.horizontal {
+  display: flex;
+  gap: 5px;
+}
+p.medium {
+  font-size: 20px;
+}
+
 .character-nav {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
   overflow-x: auto;
   gap: 20px;
-  margin: var(--padding-tb) var(--padding-lf);
+  padding: 0px 30px;
 
-  touch-action: none; /* Add also this */
-  user-select: none;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
 }
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -100,11 +152,21 @@ a {
   display: none; /* Older Safari and Chromium */
 }
 
-.char-icon {
+.icon {
   display: flex;
   position: relative;
+}
+.icon.large {
   min-width: 60px;
   height: 60px;
+}
+.icon.medium {
+  min-width: 45px;
+  height: 45px;
+}
+.icon.small {
+  min-width: 22px;
+  height: 22px;
 }
 
 .unselectable {
@@ -118,6 +180,7 @@ a {
 .character-main {
   display: flex;
   flex-grow: 1;
+  padding: 0px var(--padding-lf);
 }
 
 .navbar {
