@@ -21,6 +21,18 @@ export function useHorizontalScroll() {
         });
       };
       el.addEventListener("wheel", onWheel);
+
+      const dragStart = (ev: PointerEvent) =>
+        el.setPointerCapture(ev.pointerId);
+      const dragEnd = (ev: PointerEvent) =>
+        el.releasePointerCapture(ev.pointerId);
+      const drag = (ev: PointerEvent) =>
+        el.hasPointerCapture(ev.pointerId) && (el.scrollLeft -= ev.movementX);
+
+      el.addEventListener("pointerdown", dragStart);
+      el.addEventListener("pointerup", dragEnd);
+      el.addEventListener("pointermove", drag);
+
       return () => el.removeEventListener("wheel", onWheel);
     }
   }, []);

@@ -88,6 +88,9 @@ a {
   overflow-x: auto;
   gap: 20px;
   margin: var(--padding-tb) var(--padding-lf);
+
+  touch-action: none; /* Add also this */
+  user-select: none;
 }
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -104,11 +107,12 @@ a {
   height: 60px;
 }
 
-.undraggable {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none; /* Chrome, Opera */
+  -webkit-touch-callout: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none;
 }
 
 .character-main {

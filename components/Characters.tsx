@@ -1,4 +1,5 @@
 "use client";
+
 import { TCharacterDetails } from "@/lib/types/freesr";
 import game_data from "../data/game_data.json";
 import Image from "next/image";
@@ -17,7 +18,8 @@ export default function Characters() {
           fill
           sizes="(max-width: 60px) 100vw"
           style={{ objectFit: "cover" }}
-          draggable="false"
+          className="unselectable"
+          draggable={false}
         />
       </div>
     );
@@ -25,7 +27,7 @@ export default function Characters() {
 
   return (
     <div className="characters">
-      <div ref={scrollRef} className="character-nav no-scrollbar">
+      <div ref={scrollRef} className="character-nav no-scrollbar drag-scroll">
         {charIcons}
       </div>
       <div className="character-main">Main Character Screen</div>
